@@ -44,7 +44,7 @@ Next
 
 For L = 2 To 90
     For M = 2 To 20
-        If ms.Worksheets("Hoists").Cells(L, "F").Value = t.Worksheets("Hoist").Cells(M, "B").Value Then
+        If ms.Worksheets("Hoists").Cells(L, "F").Value = t.Worksheets("Hoist").Cells(M, "B").Value And ms.Worksheets("Hoists").Cells(L, "F").Value <> ms.Worksheets("Hoists").Cells(L - 1, "F").Value Then
         'Hoist Model
         t.Worksheets("Hoist").Cells(M, "E").Value = ms.Worksheets("Hoists").Cells(L, "A").Value
         '# of Cars
