@@ -4,10 +4,16 @@ Sub update()
 'project names in master schedule & tracking must match
 'only searches 100 lines in master schedule & tracking document
 
+'copy file to flashdrive
+Dim fso As Object
+Set fso = VBA.CreateObject("scripting.FileSystemobject")
+fso.CopyFile "S:\Pacific Tower Cranes\Sales\master schedule.xlsx", "E:\Documents\master schedule.xlsx", True
+
 Dim ms As Workbook, t As Workbook
 Dim I As Long, J As Long, K As Long, L As Long
 Set ms = Workbooks.Open("E:\Documents\master schedule.xlsx")
 Set t = ThisWorkbook
+
 
 'search Tower Cranes for job names that are in tracking documents amd update the date & crane data
 
